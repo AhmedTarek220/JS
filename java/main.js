@@ -48,5 +48,12 @@ taskInput.addEventListener('keypress', (e) => {
         addTask();
     }
 });
+window.addEventListener('load', () => {
+    const tasks = localStorage.getItem('Tasks');
+    if (tasks) {
+        taskList.innerHTML = tasks;
+    }
+})
+
 
 
