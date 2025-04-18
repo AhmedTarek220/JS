@@ -2,17 +2,17 @@
 const taskInput = document.getElementById('task-input');
 const addTaskBtn = document.getElementById('add-task-btn');
 const taskList = document.getElementById('task-list');
-// Function to add a task
-function addTask() {
-    const taskText = taskInput.value.trim();
 
-    // Check if input is empty
-    if (taskText === '') {
-        alert('Please enter a task!');
-        return;
-    }
+// Function to load tasks from localStorage
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('Tasks')) || [];
+    tasks.forEach(taskText => {
+        createTaskElement(taskText);
+    });
+}
 
-    // Create new task element
+// Function to create a task element
+function createTaskElement(taskText) {
     const taskItem = document.createElement('li');
     const taskSpan = document.createElement('span');
     taskSpan.textContent = taskText;
@@ -25,6 +25,7 @@ function addTask() {
     // Add event listener to remove button
     removeBtn.addEventListener('click', () => {
         taskItem.remove();
+        updateLocalStorage();
     });
 
     // Append task text and button to the task item
@@ -33,14 +34,37 @@ function addTask() {
 
     // Append task item to the task list
     taskList.appendChild(taskItem);
-    localStorage.setItem('Tasks',taskItem)
+}
 
-    // Clear input field
+// Function to update localStorage
+function updateLocalStorage() {
+    const tasks = Array.from(taskList.children).map(taskItem => 
+        taskItem.querySelector('.task').textContent
+    );
+    localStorage.setItem('Tasks', JSON.stringify(tasks));
+}
+
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+
+    // Check if input is empty
+    if (taskText === '') {
+        alert('Please enter a task!');
+        return;
+    }
+
+
+    createTaskElement(taskText);
+
+
+    updateLocalStorage();
+
+
     taskInput.value = '';
 }
 
-// Add event listener to the add button
-addTaskBtn.addEventListener('click', addTask);
+// Add event listener to the add buttonaddTaskBtn.addEventListener('click', addTask);
 
 // Add task on pressing Enter key
 taskInput.addEventListener('keypress', (e) => {
@@ -48,12 +72,10 @@ taskInput.addEventListener('keypress', (e) => {
         addTask();
     }
 });
-window.addEventListener('load', () => {
-    const tasks = localStorage.getItem('Tasks');
-    if (tasks) {
-        taskList.innerHTML = tasks;
-    }
-})
+
+
+document.addEventListener('DOMContentLoaded', loadTasks);
+
 
 
 
