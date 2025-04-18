@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #222;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 20%;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 20px;
+}
+.active{
+    max-width: 100%;
+}
+.container .active svg{
+    border-radius: 50%;
+    background-color: #444;
+    padding: 5px;
+}
+.container .active h3{
+    margin: 20px 0;
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+}
+ul{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap; /* العناصر تبقى جنب بعض */
+}
+
+.container .active p{
+    width: 300px;
+    max-width: 100%;
+    color: #888;
+    font-size: 15px;
+    margin: 10px 0;
+}
+ul li{
+    width: 20%;   
+    padding: 10px;
+    text-align: center;
+    margin: 15px 10px;
+    border-radius: 50%;
+    background-color:#888;
+    cursor: pointer;
+
+}
+button{
+    width: 100%;
+    background-color: rgb(255, 94, 0);
+    color: #111;
+    letter-spacing: 1.5px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.inactive{
+    text-align: center;
+}
+.inactive .mark{
+    color: rgb(255, 94, 0);
+    border-radius: 20px;
+    background-color: #9999991e;
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px auto;
+    letter-spacing: 2px;
+    font-weight: normal;
+
+}
+.inactive h3{
+    color: white;
+    font-size: 25px;
+    margin: 20px 0;
+}
+.inactive p{
+    color: #999999;
+    line-height: 22px;
+}
+.hidden{
+    display: none;
+}
+.classActive{
+    background-color:rgb(255, 94, 0);
+}
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    ul {
+        justify-content: space-between;
+    }
+    ul li {
+        width: 15px; 
+        height: 15px;
+        font-size: 12px;
+    }
+    .container .active h3,
+    .inactive h3 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 12px;
+    }
+}
+
+
+

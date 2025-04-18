@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#switch{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+label{
+    width: 150px;
+    height: 75px;
+    background-color: black;
+    position: relative;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 0.3s;
+    display: block;
+}
+label::after{
+    content: '';
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    top: 7px;
+    left: 5px;
+    transition: 0.5s;
+}
+#switch:checked + label:after{
+    background-color: black;
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
