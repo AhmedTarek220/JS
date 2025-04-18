@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game{
+    width: 255px;
+    text-align: center;
+    font-family: system-ui;
+    color: white;
+    margin: auto;
+}
+.title{
+    background-color: #f25;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+span{
+    color: #fa0;
+}
+.square{
+    width: 80px;
+    height: 80px;
+    float: left;
+    background-color: #f25;
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin: 2px;
+}
+.square:hover{
+    background-color: #000;
+    cursor: pointer;
+}
+button{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: #f25;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0.5;
+}
