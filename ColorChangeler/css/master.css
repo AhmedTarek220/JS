@@ -1,0 +1,171 @@
+:root{
+    --main--color:#ff9800;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+}
+/* Start Setting box*/
+.setting-box{
+    position: fixed;
+    left: -200px;
+    top: 0;
+    z-index: 100;
+    min-height: 100vh;
+    transition: 0.3s;
+    width: 200px;
+    background-color: #fff;
+    transition: .4s;
+
+}
+.setting-box.open{
+    left: 0;
+}
+.setting-box .toglle-seting{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: #fff;
+    text-align: center;
+    right: -30px;
+    cursor: pointer;
+    
+}
+.setting-box .option-box{
+    padding: 20px;
+}
+.setting-box .option-box h4{
+    margin: 0;
+    color: #666;
+}
+.setting-box .option-box .colors{
+    padding: 0;
+}
+.setting-box .option-box .colors li {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    opacity: .5;
+    margin-right: 8px;
+
+}
+.setting-box .option-box .colors li .inactive{
+    opacity: 1;
+}
+.setting-box .option-box .colors li:first-child{
+    background-color: #ff9800;
+}
+.setting-box .option-box .colors li:nth-child(2){
+    background-color: #e91e63;
+}
+.setting-box .option-box .colors li:nth-child(3){
+    background-color: #009688;
+}
+.setting-box .option-box .colors li:nth-child(4){
+    background-color: #03A9F4;
+}
+.setting-box .option-box .colors li:nth-child(5){
+    background-color: #4caf50;
+}
+/* End Setting Books*/
+/* Start Landing Page */
+.Landing-page{
+    min-height: 100vh;
+    background-image:url('../imgs/01.jpg') ;
+    background-size: cover;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.header-area{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.header-area .logo{
+    padding: 10px;
+    width: 300px;
+    font-weight: bold;
+    
+}
+.header-area ul{
+    padding-left: 0;
+    padding-right: 20px;
+    font-size: 15px;
+}
+.header-area ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+.header-area ul li a{
+    transition: 0.3s;
+}
+.header-area ul li a:hover
+,.header-area ul li .active{
+    color: #ff9800;
+}
+
+.Landing-introdcution{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+
+}
+.Landing-introdcution h1{
+    font-size: 38px;
+    margin: 0 0 10px;
+}
+.Landing-introdcution p{
+    line-height: 1.6;
+    font-size: 18px;
+}
+.Landing-introdcution h1 span{
+    color: var(--main--color);
+}
+@media screen and (max-width: 768px){
+    .header-area{
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .header-area ul{
+        padding: 0;
+    }
+    .header-area ul li{
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .Landing-introdcution h1{
+        font-size: 22px;
+    }
+    .Landing-introdcution p{
+        font-size: 12px;
+    }
+    
+}
+
+
+/* End Landing Page */
